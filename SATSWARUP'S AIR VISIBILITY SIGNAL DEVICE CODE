@@ -1,0 +1,18 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+ void main(){
+ int air_visibility;
+printf("enter air visibility ( between 1610-2416 meters):");
+ scanf("%d" ,&air_visibility);
+ printf("you have entered the air visibility %d meters\n" ,
+air_visibility);
+ if (air_visibility>1610 & air_visibility<2416){
+ printf("YOU CAN FLY");
+ 
+ }
+ else{
+ printf("YOU CANNOT FLY");
+ }
+
+
+ }
