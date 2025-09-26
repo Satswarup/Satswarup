@@ -1,0 +1,18 @@
+#include<stdio.h>
+void main(){
+    int admc_percentage;
+    //admc is adaptability and decision making capabilities 
+    printf("enter admc percentage (between 0 to 100):");
+    scanf("%d",&admc_percentage);
+    printf("you have entered %d percentage\n",admc_percentage);
+    if (admc_percentage>=90){
+        printf("GRADE A\n  congratulations  you have promoted to senior engineer");} 
+  if (admc_percentage>=60 & admc_percentage<90){
+        printf("GRADE B\n  congratulations you have promoted to assistant engineer ");
+    }
+    if (admc_percentage<60){
+        printf("GRADE C\n sorry you are not promoted");
+ }
+
+
+}
