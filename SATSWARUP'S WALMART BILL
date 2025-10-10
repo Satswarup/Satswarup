@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include<string.h>
+void main(){
+  char CUSTOMER_NAME[20];
+  int MOBILE_NUMBER;
+  
+  int RICE;
+  int GHEE;
+   int NOTEBOOK;
+  int OIL;
+  int CHIPS;
+  int COLDRINK;
+printf("PLEASE ENTER YOUR YOUR NAME :");
+  scanf("%s",&CUSTOMER_NAME);
+  printf("PLEASE ENTER YOUR MOBILE NUMBER :");
+  scanf("%d",&MOBILE_NUMBER);
+
+  printf("PLEASE ENTER RICE QUANTITY(IN KG):");
+  scanf("%d",&RICE);
+   printf("GHEE QUANTITY(IN LTR):");
+   scanf("%d",&GHEE);
+   printf("NOTEBOOK QUANTITY(IN UNTS):");
+    scanf("%d",&NOTEBOOK);
+    printf("OIL QUANTITY(IN LTR):");
+     scanf("%d",&OIL);
+     printf("CHIPS QAUNTITY(IN PKTS):");
+      scanf("%d",&CHIPS);
+      printf("COLDRINK(IN LTR):");
+       scanf("%d",&COLDRINK);
+   printf("====================================\n   🏦 WALMART SUPERMARKET🏦 \n       SHOP ID:-001");
+  printf("\n===================================");
+  printf("\nWALMART PRODUCT INVOICE\n==================================\n");
+  printf("CUSTOMER NAME:%s\n",&CUSTOMER_NAME);
+  printf("MOBILE NO:%d",MOBILE_NUMBER);
+printf("\nCUSTOMER ID:- 1234556789 ");
+printf("\n==================================");         
+printf("      \n   PRODUCT SUMMARY\n");
+
+if (RICE==1 & GHEE==1 & NOTEBOOK==2 & OIL==1 & CHIPS==4 & COLDRINK==2){
+    printf("===================================\nPRODUCT      QNT    PRICE \n1.RICE     1KG ₹200\n2.GHEE      1KG      ₹300\n3.NOTEBOOK  2UNTS   ₹350\n4.OIL       1LTR    ₹120\n5.CHIPS     4PKTS   ₹80\n6.COLDRINK  2LTR    ₹220  ");
+}
+printf("\n=====================================");
+printf("\nTOTAL BILL=₹1270+(12%1270)gst\nTOTAL PAYABLE AMOUNT=₹1422.");
+printf("\n===================================\n      *THANK YOU*\n     *VISIT AGAIN*");
+}
