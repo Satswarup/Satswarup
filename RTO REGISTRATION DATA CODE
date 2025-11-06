@@ -1,0 +1,80 @@
+#include <stdio.h>
+#include <string.h> 
+struct RTO{
+    char name[10];
+    int mobile_number;
+    char car_model[10];
+    char number_plate[10];
+    int invoice_id;
+    int price;
+    int date;
+};
+int main(){
+    struct RTO registered[10], temp;
+    int n;
+printf("Enter number of customers (max 10): ");
+     if (scanf("%d", &n) != 1 || n < 1 || n > 10) {
+        printf("Invalid number of customers. Exiting.\n");
+        return 1; // Exit with error code
+    }
+ for(int i = 0; i < n; i++){
+        printf("\n--- ENTER DETAILS OF CUSTOMER %d ---\n", i + 1);
+ printf("ENTER YOUR NAME (max 9 chars): ");
+        scanf("%s", registered[i].name);
+         printf("ENTER YOUR MOBILE NUMBER: ");
+        scanf("%d", &registered[i].mobile_number);
+        printf("ENTER YOUR CAR MODEL (max 9 chars): ");
+        scanf("%s", registered[i].car_model);
+        printf("ENTER YOUR PLATE NUMBER (max 9 chars): ");
+        scanf("%s", registered[i].number_plate);
+printf("ENTER YOUR INVOICE ID NUMBER: ");
+        scanf("%d", &registered[i].invoice_id);
+
+
+        printf("ENTER YOUR CAR PRICE: ");
+        scanf("%d", &registered[i].price);
+
+
+        printf("ENTER YOUR CAR REGISTRATION DATE (e.g., DDMMYYYY): ");
+        scanf("%d", &registered[i].date);
+    }
+
+
+   
+    printf("\n--- Sorting data by Car Price (Ascending) ---\n");
+    for(int i = 0; i < n - 1; i++){
+        for(int j = 0; j < n - i - 1; j++){
+            
+            if(registered[j].price > registered[j+1].price){
+                temp = registered[j];
+                registered[j] = registered[j+1];
+                registered[j+1] = temp;
+            }
+        }
+    }
+
+
+  
+    
+    printf("\n\n--- Sorted Customer Registration Details ---\n");
+ 
+    printf("NAME\tMOBILE NO\tMODEL\tPLATE NO\tINVOICE ID\tCAR PRICE\tREG. DATE\n");
+    printf("--------------------------------------------------------------------------------------------------\n");
+
+
+   
+    for(int i = 0; i < n; i++) {
+     
+        printf("%s\t%d\t%s\t%s\t%d\t\t%d\t\t%d\n",
+               registered[i].name,
+               registered[i].mobile_number,
+               registered[i].car_model,
+               registered[i].number_plate,
+               registered[i].invoice_id,
+               registered[i].price,
+               registered[i].date);
+    }
+
+
+    return 0;
+}
