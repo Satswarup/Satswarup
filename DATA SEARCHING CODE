@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct RTO{
+    char name[10];
+    int mobile_number;
+    char car_model[10];
+    char number_plate[10];
+    int invoice_id;
+    int price;
+    int date;
+}rto[100],t;
+int n=0;
+int main(){
+    int i,j,c,s,flag=0;
+    while(1) {
+        printf("\nmenu\n1.ADD RECORD\n2.DISPLAY RECORD\n3.SORT\n4.SEARCH\n5.EXIT\nENTER YOUR CHOICE CODE:");
+scanf("%d",&c);
+switch(c){
+    case 1:
+    printf("\n printf how many car details you want?:");
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+        printf("\nENTER THE NAME OF OWNER:");
+        scanf("%s",&rto[i].name);
+        printf("\nENTER MOBILE NO.:");
+        scanf("%d",&rto[i].mobile_number);
+         printf("\nENTER CAR MODEL:%s",rto[i].car_model);
+        scanf("%s",&rto[i].car_model);
+        printf("\nENTER THE PLATE NUMBER :");
+        scanf("%s",&rto[i].number_plate);
+        printf("\nENTER THE INVOICE ID :");
+        scanf("%d",&rto[i].invoice_id);
+         printf("\nENTER CAR PRICE :");
+        scanf("%d",&rto[i].price);
+        printf("\nENTER REGISTRATION DATE:");
+        scanf("%d",&rto[i].date);
+         }  
+break;
+    case 2:
+     for(i=0;i<n;i++){
+         printf("\n==========+==========+==========+==========+==========+==========");
+         printf("\nOWNER NAME:%s",rto[i].name);
+          printf("\nMOBILE NO.:%d",rto[i].mobile_number);
+           printf("\nCAR MODEL:%s",rto[i].car_model);
+           printf("\nCAR PLATE NUMBER:%s",rto[i].number_plate);
+            printf("\nINVOICE ID:%d",rto[i].invoice_id);
+             printf("\nCAR PRICE:%d",rto[i].price);
+              printf("\ndate:%d",rto[i].date);
+              }break;
+     case 4:
+     printf("\nENTER INVOICE ID TO SEARCH:");
+     scanf("%d",&s);
+     for(i=0;i<n;i++){
+         if(rto[i].invoice_id==s){
+             printf("\nOWNER NAME:%s",rto[i].name);
+          printf("\nMOBILE NO.:%d",rto[i].mobile_number);
+          printf("\nCAR MODEL:%s",rto[i].car_model);
+           printf("\nCAR PLATE NUMBER:%s",rto[i].number_plate);
+            printf("\nINVOICE ID:%d",rto[i].invoice_id);
+             printf("\nCAR PRICE:%d",rto[i].price);
+              printf("\ndate:%d",rto[i].date);
+              flag=1;
+         }
+     }
+     if(flag==0){
+         printf("\nRECORD NOT FOUND");
+     }
+     break;
+     case 3:
+     for(i=0;i<n-1;i++){
+     for(j=0;j<n-i-1;j++){
+         if(rto[j].price>rto[j+1].price){
+             t = rto[j];
+             rto[j] = rto[j+1];
+             rto[j+1] = t;
+         }
+     }
+     }printf("\nRECORDS ARE SORTED AND DISPLAYED ON DISPLAY WINDOW.....");
+     break;
+     case 5:
+     exit(0);
+     break;
+}
+}
+return 0;
+}  
