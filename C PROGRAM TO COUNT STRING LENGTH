@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h> 
+
+
+int count(const char *s) {
+   
+    if (*s == '\0') {
+        return 0;
+    } 
+   
+    else {
+       
+        return 1 + count(s + 1); 
+    }
+}
+
+int main() {
+    
+  
+    const char *a = "S12345";
+    
+   
+    int length = count(a);
+    
+    printf("The string being checked is: \"%s\"\n", a);
+    printf("The calculated length is: %d\n", length);
+    
+    
+    if (length == 6) {
+        printf("\nResult: correct format of seat number ,you can seat for the exam\n");
+    } else {
+        printf("\nResult: incorrect format of the seat number ,you cannot seat for the exam\n");
+    }
+  
+    
+    return 0;
+}
+
